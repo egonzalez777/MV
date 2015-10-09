@@ -1,8 +1,18 @@
 var express = require('express');
+var stylus = require('stylus');
+
+var http = require('http');
+var path = require('path');
 
 var env = process.env.NODE_ENV || 'development';
 
 var app = express();
+
+app.set('port', 3001);
+
+function compile(str, path) {
+	return stylus(str).set('filename', path);
+}
 
 /*app.configure(function () {
 	app.set('views', __dirname + '/server/views');
@@ -16,5 +26,5 @@ app.get('*', function (req, res) {
 	res.render('index');
 });
 
-app.listen(3080);
-console.log("Server start at PORT 3080");
+app.listen(3001);
+console.log("Server start at PORT 3001");

@@ -7,8 +7,8 @@
 		console.log('boo');
 	});
 
-	socket.on('broadcasted_update', function (d) {
-		console.log(d);
+	socket.on('broadcasted_update', function () {
+		
 		var el = $('<div class="object" />').css({'width': '300px', 'height': '150px', 'background': '#ff00ff', 'color': 'blue'});
 		$('body').append(el);
 		el.html('<p>MOOOOO WHATSUP');
