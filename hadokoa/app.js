@@ -13,6 +13,15 @@ var admin = require('./routes/admin');
 
 var app = express();
 
+var fs, configurationFile;
+
+configurationFile = 'local.cfg';
+fs = require('fs');
+
+var configuration = JSON.parse(
+    fs.readFileSync(configurationFile)
+);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -62,7 +71,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.hadokoa = db.db('mongodb://localhost:27017/hadokoa');
+app.hadokoa = db.db(configuration.db);
 
 
 
