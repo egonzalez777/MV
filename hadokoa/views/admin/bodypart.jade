@@ -1,7 +1,14 @@
 extends ../layout
 
 block content
-	form(action="/api/v1/insert/bodypart", method="post")
-		div.form-group
-			label(class="form-control") Name:
-			input(type="text" class="form-control")
+	div(ng-view)
+	div.row
+		H1 Body Part
+		hr
+		form(action="/api/v1/insert/bodypart", method="post", name="bodyPart")
+			div.form-group
+				label Name:
+				input(type="text" class="form-control", placeholder="Enter body part")
+
+			div.form-group
+				button.btn.btn-success Submit
