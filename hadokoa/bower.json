@@ -1,0 +1,23 @@
+{
+  "name": "Hadokoa",
+  "version": "0.0.1",
+  "description": "Workout platform",
+  "main": "bin/www",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "workout"
+  ],
+  "authors": [
+    "Eric Gonzalez"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,7 @@
+extends ../layout
+
+block content
+	form(action="/api/v1/insert/bodypart", method="post")
+		div.form-group
+			label(class="form-control") Name:
+			input(type="text" class="form-control")
