@@ -13,7 +13,12 @@ var app = express();
 
 app.all('/*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'accept, authorization, content-type, x-requested-with');
+  res.header('Access-Control-Allow-Headers', 'Accept, Origin, Authorization, Content-Type, X-Requested-With');
+  res.header('Access-Control-Allow-Methods', 'PATCH, POST, GET, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Credentials', false);
+  if ('OPTIONS' === req.method) { 
+    return res.sendStatus(200);
+  }
   next();
 });
 
@@ -40,18 +45,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// development error handler
-// will print stacktrace
-/*if (app.get('env') === 'development') { // HAVE CLIENT
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}*/
 
 /**
  * Development Settings
@@ -91,15 +84,5 @@ if (app.get('env') === 'production') {
         });
     });
 }
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
 
 module.exports = app;

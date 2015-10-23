@@ -16,12 +16,9 @@ angular.module('hadokoaClientApp')
     $scope.user = user = {};
 
     $scope.submit = function (form) {
-    	console.log(form);
     	if (form.$invalid) {
     		return;
     	}
-    	
-    	console.log('d', $scope.signup.user);
 
     	$http({
     		'url': 'http://localhost:3000/signup',
