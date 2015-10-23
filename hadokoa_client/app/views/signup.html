@@ -1,0 +1,21 @@
+<form name="signupForm">
+	<div class="form-group">
+		<label for="firstname">First Name</label>
+		<input type="text" id="firstname" ng-model="signup.user.firstname" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label for="lastname">Last Name</label>
+		<input type="text" id="lastname" ng-model="signup.user.lastname" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input type="email" id="email" ng-model="signup.user.email" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label for="lastname">Password</label>
+		<input type="password" id="password" ng-model="signup.user.password" class="form-control" />
+	</div>
+	<div class="form-group">
+		<button ng-click="submit(signupForm)" class="btn btn-primary">Submit</button>
+	</div>
+</form>
