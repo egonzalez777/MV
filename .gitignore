@@ -2,3 +2,4 @@
 .js*
 package.json.old
 server_old
+*.log

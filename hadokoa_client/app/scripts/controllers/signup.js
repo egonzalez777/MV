@@ -20,12 +20,13 @@ angular.module('hadokoaClientApp')
     	if (form.$invalid) {
     		return;
     	}
-    	var data = angular.copy(form);
+    	
+    	console.log('d', $scope.signup.user);
 
     	$http({
     		'url': 'http://localhost:3000/signup',
     		'method': 'POST',
-    		'data': data
+    		'data': $scope.signup.user
     	})
     		.success(function (data, status, headers, config) {
     			console.log('data', data);
