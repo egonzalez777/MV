@@ -24,7 +24,7 @@
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+        <div class="fluid-container">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -34,19 +34,34 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">hadokoaClient</a>
+            <a class="navbar-brand" href="#/">Hadokoa</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
+            <div ng-view="login-nav"></div>
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
             </ul>
+            <div ng-if="!username">
+              <div class="navbar-right">
+                <form class="navbar-form" name="loginForm">
+                  <div class="form-group">
+                    <input type="email" name="email" ng-model="user.email" placeholder="Email" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password" ng-model="user.password" placeholder="Password" class="form-control">
+                  </div>
+                  <button ng-click="login(loginForm)" class="btn btn-success btn-sm">Submit</button>
+                </form>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
+
     </div>
 
     <div class="container">
@@ -82,6 +97,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -90,6 +106,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/signup.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>

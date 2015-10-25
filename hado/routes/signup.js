@@ -15,7 +15,6 @@ router.post('/', function (req, res, next) {
   // show the request body in the command line
   var payload = req.body;
   var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-  console.log(time);
   try {
   	Users.findOne({
     	'email': payload.email

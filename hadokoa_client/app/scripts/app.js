@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -33,6 +34,11 @@ angular
         templateUrl: 'views/signup.html',
         controller: 'SignupController',
         controllerAs: 'signup'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
       })
       .otherwise({
         redirectTo: '/'

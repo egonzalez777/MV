@@ -8,10 +8,11 @@
  * Controller of the hadokoaClientApp
  */
 angular.module('hadokoaClientApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
+    $rootScope.user = {};
+    $scope.user = {};
+
+    $scope.login = function (form) {
+      console.log($scope.user);
+    };
+  }]);
